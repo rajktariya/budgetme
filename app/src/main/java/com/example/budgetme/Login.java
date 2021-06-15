@@ -24,12 +24,23 @@ public class Login extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(username.getText().toString().equals("rasika")
-                        && password.getText().toString().equals("rasika123")){
+                if(isValidUser(username.getText().toString(), password.getText().toString())){
                     startActivity(new Intent(Login.this,Home.class));
                 }
             }
         });
 
+    }
+    private boolean isValidUser(String username, String password){
+        if(username.equals("rasika") && password.equals("rasika123")) {
+            return true;
+        }
+
+        if(username.equals("rajesh") && password.equals("12345")) {
+            return true;
+        }
+
+
+        return false;
     }
 }
