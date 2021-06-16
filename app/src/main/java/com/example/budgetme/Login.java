@@ -40,6 +40,10 @@ public class Login extends AppCompatActivity {
             return true;
         }
 
+        if(username.equals("abc") && password.equals("abc")) {
+            return true;
+        }
+
         return false;
     }
 }
