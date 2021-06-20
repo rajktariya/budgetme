@@ -4,17 +4,33 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#162EC8"
+    android:background="#03FFFFFF"
     tools:context=".Login">
 
 
+    <TextView
+        android:id="@+id/pricelable"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Price:"
+        android:textSize="30dp"
+        android:textStyle="italic|bold"
+        android:layout_margin="10dp"
+        android:textColor="@color/black"/>
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginStart="11dp"
+        android:layout_marginLeft="11dp"
+        android:layout_marginTop="68dp"
+        android:layout_below="@+id/pricelable"
+        android:ems="10"
+        android:hint="Enter price here"
+        android:textColor="@color/black"
+        android:inputType="number" />
 
 
-   <TextView
-       android:layout_width="wrap_content"
-       android:layout_height="wrap_content"
-        android:text="Add expnse calss"
-       android:layout_centerInParent="true"
-       android:textColor="@color/white"
-       />
 </RelativeLayout>
