@@ -4,13 +4,89 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DA0F0F"
+    android:background="#ffffff"
     tools:context=".Login">
 
 <TextView
+    android:id="@+id/price"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:textSize="20dp"
+    android:textColor="@color/black"
+    android:textStyle="italic"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="10dp"
+    android:text="Price:"/>
+
+    <EditText
+        android:id="@+id/editTextTextPersonName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:inputType="number"
+
+        android:layout_below="@+id/price"
+        android:hint="Enter the price"
+      />
+    <TextView
+        android:id="@+id/pickthedate"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textColor="#979292"
+        android:textStyle="italic"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="10dp"
+        android:layout_below="@+id/editTextTextPersonName"
+        android:text="Pick the date"/>
+<TextView
+    android:id="@+id/descriptoin"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textSize="20dp"
+    android:text="Description(optional)"
+    android:textColor="#000000"
+    android:textStyle="italic"
+    android:layout_marginTop="30dp"
+    android:layout_marginLeft="10dp"
+    android:layout_below="@id/pickthedate"
+    />
+
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="enter item description"
+        android:textSize="15dp"
+        android:textStyle="italic"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:textColor="@color/black"
+        android:layout_below="@id/descriptoin"
+
+    />
+<TextView
+    android:id="@+id/categorytitle"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginTop="35dp"
+    android:layout_marginLeft="10dp"
+    android:text="Category"
+    android:textColor="@color/black"
+    android:textStyle="italic"
     android:textSize="30dp"
-    android:textColor="@color/white"
-    android:text="delete expence "/>
+    android:layout_below="@id/editText"
+    />
+
+    <Spinner
+        android:id="@+id/categorylist"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/categorytitle"
+        android:layout_margin="10dp"
+
+        />
 </RelativeLayout>
