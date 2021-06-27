@@ -25,7 +25,7 @@ public class Login extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(isValidUser(username.getText().toString(), password.getText().toString())){
-                    startActivity(new Intent(Login.this,Home.class));
+                  startActivity(new Intent(Login.this,Home.class));
                 }
             }
         });
