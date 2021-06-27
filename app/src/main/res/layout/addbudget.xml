@@ -3,14 +3,80 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="#DA0F0F"
-    tools:context=".Login">
-
-<TextView
-    android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:textSize="30dp"
-    android:textColor="@color/white"
-    android:text="Add budget"/>
+    android:background="#ffffff"
+    android:visibility="visible"
+    tools:context=".Login"
+    tools:visibility="visible">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Add budget"
+        android:textColor="@color/white"
+        android:textSize="30dp"
+        />
+
+    <Button
+        android:id="@+id/selectmonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Select month and year"
+        android:backgroundTint="#C1BEBE"
+        android:textColor="#434141"
+        android:visibility="visible" />
+
+
+    <TextView
+        android:id="@+id/monthbudget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="100dp"
+        android:text="Enter the selected month's budget"
+        android:textColor="#B5A7A7"
+        android:textSize="20dp"
+        android:textStyle="italic"
+        android:layout_below="@id/selectmonth"/>
+
+    <EditText
+        android:id="@+id/editTextNumber"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_below="@id/monthbudget"
+        android:inputType="number"
+        />
+    <TextView
+        android:id="@+id/selectedbudget"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginTop="150dp"
+        android:text="selected months budget : 10000"
+        android:textColor="#B5A7A7"
+        android:textSize="30dp"
+        android:textStyle="italic"
+        android:layout_below="@id/editTextNumber"/>
+
+
+    <Button
+        android:id="@+id/setbudget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Set budget"
+        android:paddingLeft="80dp"
+        android:paddingRight="80dp"
+        android:textColor="@color/black"
+        android:textStyle="italic"
+        android:backgroundTint="#DAD5D5"
+        android:layout_centerHorizontal="true"
+        android:layout_alignParentBottom="true"
+        />
+
 </RelativeLayout>

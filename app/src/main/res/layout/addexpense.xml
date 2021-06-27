@@ -40,8 +40,8 @@
         android:textStyle="italic"
         android:layout_marginTop="30dp"
         android:layout_marginLeft="10dp"
-        android:layout_below="@+id/editTextTextPersonName"
-        android:text="Pick the date"/>
+        android:layout_below="@+id/editTextTextPersonName"/>
+
 <TextView
     android:id="@+id/descriptoin"
     android:layout_width="match_parent"
