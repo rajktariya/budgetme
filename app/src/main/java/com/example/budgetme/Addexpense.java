@@ -5,9 +5,11 @@ import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.Spinner;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -28,7 +30,14 @@ public class Addexpense extends AppCompatActivity {
         TextView pickdate =findViewById(R.id.pickthedate);
         Spinner categoryList =findViewById(R.id.categorylist);
 
-
+        Button saveButton =findViewById(R.id.saveButton);
+        saveButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(Addexpense.this,"Data saved successfully",Toast.LENGTH_LONG).show();
+                finish();
+            }
+        });
         ArrayAdapter adapter = new ArrayAdapter(this,android.R.layout.simple_spinner_item,
                 courses );
         categoryList.setAdapter(adapter);
