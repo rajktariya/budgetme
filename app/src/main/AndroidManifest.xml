@@ -21,7 +21,7 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        <activity android:name=".Addexpence"/>
+        <activity android:name=".Addexpense"/>
         <activity android:name=".Addbudget"/>
         <activity android:name=".Deleteexpence"/>
         <activity android:name=".Categories"/>

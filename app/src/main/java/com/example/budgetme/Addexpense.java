@@ -15,7 +15,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Locale;
 
-public class Addexpence extends AppCompatActivity {
+public class Addexpense extends AppCompatActivity {
     String[] courses = { "Food", "Data structures",
             "Interview prep", "Algorithms",
             "DSA with java", "OS" };
@@ -23,7 +23,7 @@ public class Addexpence extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        setContentView(R.layout.addexpence);
+        setContentView(R.layout.addexpense);
         final Calendar myCalendar = Calendar.getInstance();
         TextView pickdate =findViewById(R.id.pickthedate);
         Spinner categoryList =findViewById(R.id.categorylist);
@@ -50,7 +50,7 @@ public class Addexpence extends AppCompatActivity {
         pickdate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                new DatePickerDialog(Addexpence.this, date, myCalendar
+                new DatePickerDialog(Addexpense.this, date, myCalendar
                         .get(Calendar.YEAR), myCalendar.get(Calendar.MONTH),
                         myCalendar.get(Calendar.DAY_OF_MONTH)).show();
              }
