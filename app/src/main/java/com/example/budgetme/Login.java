@@ -10,6 +10,7 @@ import android.view.View;
 
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 public class Login extends AppCompatActivity {
 
@@ -26,6 +27,8 @@ public class Login extends AppCompatActivity {
             public void onClick(View v) {
                 if(isValidUser(username.getText().toString(), password.getText().toString())){
                   startActivity(new Intent(Login.this,Home.class));
+                }else{
+                    Toast.makeText(Login.this,"Invalid Username or password",Toast.LENGTH_LONG).show();
                 }
             }
         });
