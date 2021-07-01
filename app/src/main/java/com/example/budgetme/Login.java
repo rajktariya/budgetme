@@ -39,7 +39,7 @@ public class Login extends AppCompatActivity {
             return true;
         }
 
-        if(username.equals("rajesh") && password.equals("12345")) {
+        if(username.equals("kalyani") && password.equals("kalyani123")) {
             return true;
         }
 
