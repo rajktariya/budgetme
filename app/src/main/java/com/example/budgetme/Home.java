@@ -14,49 +14,48 @@ public class Home extends Activity {
 
         setContentView(R.layout.home);
 
-        Button addexpencebutton=findViewById(R.id.addexpense);
+        Button addexpencebutton = findViewById(R.id.addexpense);
         addexpencebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(Home.this, Addexpense.class));
+                startActivity(new Intent(Home.this, Addexpense.class));
             }
         });
- Button addbudgetbutton=findViewById(R.id.addbudget);
+        Button addbudgetbutton = findViewById(R.id.addbudget);
         addbudgetbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(Home.this,Addbudget.class));
+                startActivity(new Intent(Home.this, Addbudget.class));
             }
         });
- Button deleteexpencebutton=findViewById(R.id.deleteexpense);
+        Button deleteexpencebutton = findViewById(R.id.deleteexpense);
         deleteexpencebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(Home.this,Deleteexpence.class));
+                startActivity(new Intent(Home.this, Deleteexpence.class));
             }
         });
- Button categoriesbutton=findViewById(R.id.categories);
+        Button categoriesbutton = findViewById(R.id.categories);
         categoriesbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(Home.this,Categories.class));
+                startActivity(new Intent(Home.this, Categories.class));
             }
         });
-        Button staticsbutton=findViewById(R.id.statics);
+        Button staticsbutton = findViewById(R.id.statics);
         staticsbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(Home.this,Statics.class));
+                startActivity(new Intent(Home.this, Statics.class));
             }
         });
-        Button tasktodobutton=findViewById(R.id.taskstodo);
+        Button tasktodobutton = findViewById(R.id.taskstodo);
         tasktodobutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                    startActivity(new Intent(Home.this,Taskstodo.class));
+                startActivity(new Intent(Home.this, Taskstodo.class));
             }
         });
-
 
 
     }
