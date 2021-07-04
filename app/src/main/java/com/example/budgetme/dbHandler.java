@@ -26,7 +26,7 @@ public class dbHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "myDatabase";
     private static final String CATEGORY_TABLE = "categories";
     public static final String EXPENSE_TABLE = "expenses";
-    private static final String BUDGET_TABLE = "budget";
+    public static final String BUDGET_TABLE = "budget";
     public static final String _ID = "id";
     public static final String CAT_NAME = "catName";
     public static final String EXPENSE_CATEGORY = "category";

@@ -62,6 +62,7 @@
         android:textColor="#B5A7A7"
         android:textSize="30dp"
         android:textStyle="italic"
+        android:visibility="gone"
         android:layout_below="@id/editTextNumber"/>
 
 
