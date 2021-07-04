@@ -54,7 +54,7 @@
         android:textStyle="bold|italic"
 
         android:layout_below="@id/addbudget"
-        android:text="DELETE EXPENCE" />
+        android:text="DELETE EXPENSE" />
     <Button
         android:id="@+id/categories"
         android:layout_width="match_parent"

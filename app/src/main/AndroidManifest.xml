@@ -22,7 +22,7 @@
             </intent-filter>
 
         </activity>
-        <activity android:name=".Addexpense"/>
+        <activity android:name=".addexpense.AddexpenseActivity"/>
         <activity android:name=".Addbudget"/>
         <activity android:name=".Deleteexpence"/>
         <activity android:name=".Categories"/>

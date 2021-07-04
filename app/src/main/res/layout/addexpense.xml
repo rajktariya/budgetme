@@ -44,7 +44,7 @@
         android:layout_below="@+id/editTextTextPersonName"/>
 
 <TextView
-    android:id="@+id/descriptoin"
+    android:id="@+id/descriptointv"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textSize="20dp"
@@ -57,7 +57,7 @@
     />
 
     <EditText
-        android:id="@+id/editText"
+        android:id="@+id/editTextDescription"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:hint="enter item description"
@@ -66,7 +66,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginLeft="10dp"
         android:textColor="@color/black"
-        android:layout_below="@id/descriptoin"
+        android:layout_below="@id/descriptointv"
 
     />
 <TextView
@@ -79,7 +79,7 @@
     android:textColor="@color/black"
     android:textStyle="italic"
     android:textSize="30dp"
-    android:layout_below="@id/editText"
+    android:layout_below="@id/editTextDescription"
     />
 
     <Spinner
@@ -100,6 +100,7 @@
         android:paddingRight="80dp"
         android:textColor="@color/black"
         android:textStyle="italic"
+        android:layout_marginBottom="50dp"
         android:backgroundTint="#DAD5D5"
         android:layout_centerHorizontal="true"
         android:layout_alignParentBottom="true"

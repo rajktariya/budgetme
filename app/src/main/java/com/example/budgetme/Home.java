@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
+import com.example.budgetme.addexpense.AddexpenseActivity;
+
 public class Home extends Activity {
 
     @Override
@@ -18,7 +20,7 @@ public class Home extends Activity {
         addexpencebutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(Home.this, Addexpense.class));
+                startActivity(new Intent(Home.this, AddexpenseActivity.class));
             }
         });
         Button addbudgetbutton = findViewById(R.id.addbudget);
