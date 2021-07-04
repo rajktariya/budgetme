@@ -51,8 +51,10 @@ public class Addbudget extends AppCompatActivity {
                         contentValues.put(MONTH,month);
                         contentValues.put(YEAR,year);
                                 mydb.insertBudget(BUDGET_TABLE,contentValues);
+                        selectedbudget.setVisibility(View.VISIBLE);
                         selectedbudget.setText("Selected months budget : "+editTextBudget.getText().toString());
                         Toast.makeText(Addbudget.this,"Budget set for the selected month",Toast.LENGTH_LONG).show();
+                        editTextBudget.setText("");
                     }else{
                         Toast.makeText(Addbudget.this,"Enter valid month",Toast.LENGTH_LONG).show();
                     }
