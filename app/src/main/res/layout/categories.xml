@@ -4,13 +4,65 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#DA0F0F"
+    android:background="#ffffff"
     tools:context=".Login">
 
-<TextView
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:textSize="30dp"
-    android:textColor="@color/white"
-    android:text="categories "/>
+
+
+
+    <TextView
+        android:id="@+id/addnewcategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Add New Category"
+        android:textStyle="bold|italic"
+        android:textSize="30dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="50dp"
+        />
+    <EditText
+        android:id="@+id/newcategorytext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/addnewcategory"
+        android:layout_marginTop="40dp"
+        android:paddingLeft="50dp"
+        android:paddingRight="50dp"
+        android:gravity="left"
+        android:hint="new category"/>
+    <Button
+        android:id="@+id/addcategoryButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/newcategorytext"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#E6E3E3"
+        android:textColor="@color/black"
+        android:text="ADD CATEGORY"/>
+
+
+    <Spinner
+        android:id="@+id/cateogrySpinner"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addcategoryButton"
+        android:layout_marginTop="50dp"
+        android:layout_centerHorizontal="true"
+        />
+
+    <Button
+        android:id="@+id/deleteCategory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textStyle="bold|italic"
+        android:layout_below="@+id/cateogrySpinner"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="40dp"
+        android:backgroundTint="#E6E3E3"
+        android:textColor="@color/black"
+        android:text="DELETE SELECTED CATEGORY"/>
+
 </RelativeLayout>

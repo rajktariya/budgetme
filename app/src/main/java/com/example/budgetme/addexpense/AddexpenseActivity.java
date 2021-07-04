@@ -32,9 +32,7 @@ import static com.example.budgetme.dbHandler.MONTH;
 import static com.example.budgetme.dbHandler.YEAR;
 
 public class AddexpenseActivity extends AppCompatActivity {
-    String[] categoryListStrings = {"Food", "Data structures",
-            "Interview prep", "Algorithms",
-            "DSA with java", "OS"};
+    String[] categoryListStrings ;
     dbHandler mydb;
     int categorySelectedPosition = 0;
 
@@ -44,6 +42,7 @@ public class AddexpenseActivity extends AppCompatActivity {
 
         setContentView(R.layout.addexpense);
         mydb = new dbHandler(this);
+        categoryListStrings = mydb.getAllCategories().toArray(new String[0]);
         final Calendar myCalendar = Calendar.getInstance();
         EditText price = findViewById(R.id.editTextTextPersonName);
         EditText descriptiontv = findViewById(R.id.editTextDescription);

@@ -25,7 +25,7 @@
         <activity android:name=".addexpense.AddexpenseActivity"/>
         <activity android:name=".Addbudget"/>
         <activity android:name=".Deleteexpence"/>
-        <activity android:name=".Categories"/>
+        <activity android:name=".CategoryActivity"/>
         <activity android:name=".Taskstodo"/>
     </application>
 
