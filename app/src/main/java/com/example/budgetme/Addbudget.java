@@ -29,7 +29,7 @@ import static com.example.budgetme.dbHandler.YEAR;
 public class Addbudget extends AppCompatActivity {
     final Calendar myCalendar = Calendar.getInstance();
     dbHandler mydb;
-    int month, year;
+    int month, yearInt;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,7 +49,7 @@ public class Addbudget extends AppCompatActivity {
                         ContentValues contentValues = new ContentValues();
                         contentValues.put(AMOUNT,editTextBudget.getText().toString());
                         contentValues.put(MONTH,month);
-                        contentValues.put(YEAR,year);
+                        contentValues.put(YEAR,yearInt);
                                 mydb.insertBudget(BUDGET_TABLE,contentValues);
                         selectedbudget.setVisibility(View.VISIBLE);
                         selectedbudget.setText("Selected months budget : "+editTextBudget.getText().toString());
@@ -77,7 +77,7 @@ public class Addbudget extends AppCompatActivity {
                 SimpleDateFormat sdfyy = new SimpleDateFormat(myFormatyy, Locale.US);
                 selectmonth.setText(sdf.format(myCalendar.getTime())+"/"+sdfyy.format(myCalendar.getTime()));
                 month  = Integer.parseInt(sdf.format(myCalendar.getTime()));
-                year  = Integer.parseInt(sdfyy.format(myCalendar.getTime()));
+                yearInt  = Integer.parseInt(sdfyy.format(myCalendar.getTime()));
             }
 
         };
