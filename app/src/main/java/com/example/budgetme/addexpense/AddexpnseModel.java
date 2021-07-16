@@ -1,6 +1,15 @@
 package com.example.budgetme.addexpense;
 
 public class AddexpnseModel {
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    int id;
     String price;
     String category;
     String date;

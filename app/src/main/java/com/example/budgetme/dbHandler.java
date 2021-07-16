@@ -141,6 +141,7 @@ public class dbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 AddexpnseModel addexpnseModel = new AddexpnseModel();
+                addexpnseModel.setId(cursor.getInt(0));
                 addexpnseModel.setPrice(cursor.getString(2));
                 addexpnseModel.setCategory(cursor.getString(1));
                 addexpnseModel.setDate(cursor.getString(7));

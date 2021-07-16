@@ -9,6 +9,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.budgetme.R;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class AdapterExpenseAdapter extends RecyclerView.Adapter<AdapterExpenseAdapter.ViewHolder> {
@@ -43,7 +44,13 @@ public class AdapterExpenseAdapter extends RecyclerView.Adapter<AdapterExpenseAd
     public AdapterExpenseAdapter(List<AddexpnseModel> dataSet) {
         localDataSet = dataSet;
     }
-
+    public void removeItem(int position) {
+        localDataSet.remove(position);
+        notifyItemRemoved(position);
+    }
+    public List<AddexpnseModel> getData() {
+        return localDataSet;
+    }
     // Create new views (invoked by the layout manager)
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup viewGroup, int viewType) {
