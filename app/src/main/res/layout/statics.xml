@@ -7,6 +7,16 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     >
+    <Button
+        android:id="@+id/selectmonth"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="15dp"
+        android:text="Select month and year"
+        android:backgroundTint="#C1BEBE"
+        android:textColor="#434141"
+        android:visibility="visible" />
 
     <com.example.budgetme.piechart.PieView
         android:id="@+id/pie_view"
@@ -14,29 +24,16 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_margin="10dp"
+        android:layout_marginTop="100dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="20dp"
         app:show_boarder_line="true"
-        app:show_percent_text="true"
+        android:layout_below="@+id/selectmonth"
+        app:show_percent_text="false"
 
         />
 
 
-    <Button
-        android:id="@+id/pie_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Random"
-        />
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/pie_button"
-        android:layout_centerHorizontal="true"
-        android:text="New Text"
-        />
 
 </RelativeLayout>

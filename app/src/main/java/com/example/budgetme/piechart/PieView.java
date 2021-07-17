@@ -159,7 +159,7 @@ public class PieView extends View {
                 cirPaint.setColor(DEFAULT_COLOR_LIST[index % 5]);
             }
             canvas.drawArc(rect, pieHelper.getStartDegree(), pieHelper.getSweep(), true, cirPaint);
-            drawPercentText(canvas, pieHelper);
+            drawText(canvas, pieHelper);
           if(showBoardLine) {
               drawLineBesideCir(canvas, pieHelper.getStartDegree(), selected);
               drawLineBesideCir(canvas, pieHelper.getEndDegree(), selected);
@@ -204,7 +204,8 @@ public class PieView extends View {
         float x = (float) (mViewHeight / 2 + Math.cos(Math.toRadians(-angel)) * pieRadius / 2);
         float y = (float) (mViewHeight / 2
                 + sth * Math.abs(Math.sin(Math.toRadians(-angel))) * pieRadius / 2);
-        canvas.drawText(pieHelper.getTitle(), x, y, textPaint);
+        canvas.drawText(pieHelper.getPercentStr(), x, y, textPaint);
+        canvas.drawText(pieHelper.getTitle(), x, y+60, textPaint);
     }
 
     @Override

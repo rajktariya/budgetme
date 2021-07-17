@@ -77,6 +77,25 @@ public class dbHandler extends SQLiteOpenHelper {
         long newRowId = db.replace(table_name, null, values);
         return newRowId;
     }
+    public Float getBudget(String table_name, ContentValues values) {
+        List<String> categoriesList = new ArrayList<String>();
+        // Select All Query
+        String selectQuery = "SELECT amount FROM "+table_name+" where month="+values.get("month")+" AND year=" +values.get("year");
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+               return cursor.getFloat(0);
+
+            } while (cursor.moveToNext());
+        }
+        // closing connection
+
+        cursor.close();
+        db.close();
+        return 0f;
+    }
 
     /////////////////////////////////// Inserting EXPENSES into expenses table
 /////////////////////////
@@ -142,7 +161,7 @@ public class dbHandler extends SQLiteOpenHelper {
             do {
                 AddexpnseModel addexpnseModel = new AddexpnseModel();
                 addexpnseModel.setId(cursor.getInt(0));
-                addexpnseModel.setPrice(cursor.getString(2));
+                addexpnseModel.setPrice(cursor.getFloat(2));
                 addexpnseModel.setCategory(cursor.getString(1));
                 addexpnseModel.setDate(cursor.getString(7));
                 addexpnseModel.setDescription(cursor.getString(6));

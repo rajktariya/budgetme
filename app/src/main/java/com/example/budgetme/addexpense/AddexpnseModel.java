@@ -10,16 +10,16 @@ public class AddexpnseModel {
     }
 
     int id;
-    String price;
+    float price;
     String category;
     String date;
     String description;
 
-    public String getPrice() {
+    public float getPrice() {
         return price;
     }
 
-    public void setPrice(String price) {
+    public void setPrice(float price) {
         this.price = price;
     }
 

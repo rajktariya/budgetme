@@ -68,7 +68,7 @@ public class AdapterExpenseAdapter extends RecyclerView.Adapter<AdapterExpenseAd
         // Get element from your dataset at this position and replace the
         // contents of the view with that element
         viewHolder.category.setText(localDataSet.get(position).getCategory());
-        viewHolder.price.setText(localDataSet.get(position).price);
+        viewHolder.price.setText(localDataSet.get(position).price+"");
         viewHolder.description.setText(localDataSet.get(position).description);
         viewHolder.date.setText(localDataSet.get(position).date);
     }
