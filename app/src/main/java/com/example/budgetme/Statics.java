@@ -30,7 +30,7 @@ public class Statics extends AppCompatActivity {
     dbHandler mydb;
     final Calendar myCalendar = Calendar.getInstance();
     int month, yearInt;
-
+    TextView errortext;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -39,6 +39,7 @@ public class Statics extends AppCompatActivity {
         mydb = new dbHandler(this);
         final PieView pieView = (PieView) findViewById(R.id.pie_view);
         Button selectmonth = findViewById(R.id.selectmonth);
+        errortext = findViewById(R.id.errortext);
 
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -60,9 +61,11 @@ public class Statics extends AppCompatActivity {
                 contentValues.put(MONTH, month);
                 contentValues.put(YEAR, yearInt);
                 float price = mydb.getBudget(BUDGET_TABLE, contentValues);
+                errortext.setText("");
                 if (price > 0) {
                     drawChart(pieView, price);
                 } else {
+                    errortext.setText("No Expenses for this month");
                     Toast.makeText(Statics.this, "No Expenses for this month", Toast.LENGTH_LONG).show();
                 }
             }
@@ -80,7 +83,7 @@ public class Statics extends AppCompatActivity {
 
     private void drawChart(PieView pieView, float totalBudget) {
         ArrayList<PieHelper> pieHelperArrayList = new ArrayList<PieHelper>();
-        ArrayList<Integer> intList = new ArrayList<Integer>();
+//        ArrayList<Integer> intList = new ArrayList<Integer>();
         //int totalNum = (int) (10 * Math.random());
 
 //        int totalInt = 0;
@@ -95,10 +98,15 @@ public class Statics extends AppCompatActivity {
 //        }
 
         List<AddexpnseModel> expenseList = mydb.getAllExpense(dbHandler.EXPENSE_TABLE);
+        int totalPrice = 0;
         for (int i = 0; i < expenseList.size(); i++) {
+            totalPrice +=expenseList.get(i).getPrice();
             pieHelperArrayList.add(new PieHelper(100f * expenseList.get(i).getPrice() / totalBudget, expenseList.get(i).getCategory(), 0));
         }
-
+        if(totalPrice>totalBudget){
+            Toast.makeText(Statics.this, "Your expenses "+totalPrice +" have exceeded your budget limit by "+(totalPrice-totalBudget), Toast.LENGTH_LONG).show();
+            errortext.setText("Your expenses "+totalPrice +" have exceeded your budget limit by "+(totalPrice-totalBudget));
+        }
 
         pieView.selectedPie(PieView.NO_SELECTED_INDEX);
         pieView.showPercentLabel(true);

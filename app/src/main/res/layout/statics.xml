@@ -18,6 +18,12 @@
         android:textColor="#434141"
         android:visibility="visible" />
 
+    <TextView
+        android:id="@+id/errortext"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@color/red"
+        android:layout_below="@+id/selectmonth"/>
     <com.example.budgetme.piechart.PieView
         android:id="@+id/pie_view"
         android:layout_width="fill_parent"
@@ -28,7 +34,7 @@
         android:layout_marginLeft="20dp"
         android:layout_marginRight="20dp"
         app:show_boarder_line="true"
-        android:layout_below="@+id/selectmonth"
+        android:layout_below="@+id/errortext"
         app:show_percent_text="false"
 
         />
