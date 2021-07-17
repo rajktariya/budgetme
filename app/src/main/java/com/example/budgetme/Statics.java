@@ -30,6 +30,7 @@ public class Statics extends AppCompatActivity {
     dbHandler mydb;
     final Calendar myCalendar = Calendar.getInstance();
     int month, yearInt;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,8 +39,6 @@ public class Statics extends AppCompatActivity {
         mydb = new dbHandler(this);
         final PieView pieView = (PieView) findViewById(R.id.pie_view);
         Button selectmonth = findViewById(R.id.selectmonth);
-
-
 
 
         DatePickerDialog.OnDateSetListener date = new DatePickerDialog.OnDateSetListener() {
@@ -54,18 +53,18 @@ public class Statics extends AppCompatActivity {
                 String myFormatyy = "yy"; //In which you need put here
                 SimpleDateFormat sdf = new SimpleDateFormat(myFormat, Locale.US);
                 SimpleDateFormat sdfyy = new SimpleDateFormat(myFormatyy, Locale.US);
-                selectmonth.setText(sdf.format(myCalendar.getTime())+"/"+sdfyy.format(myCalendar.getTime()));
-                month  = Integer.parseInt(sdf.format(myCalendar.getTime()));
-                yearInt  = Integer.parseInt(sdfyy.format(myCalendar.getTime()));
+                selectmonth.setText(sdf.format(myCalendar.getTime()) + "/" + sdfyy.format(myCalendar.getTime()));
+                month = Integer.parseInt(sdf.format(myCalendar.getTime()));
+                yearInt = Integer.parseInt(sdfyy.format(myCalendar.getTime()));
                 ContentValues contentValues = new ContentValues();
-                contentValues.put(MONTH,month);
-                contentValues.put(YEAR,yearInt);
-            float price=    mydb.getBudget(BUDGET_TABLE, contentValues);
-            if(price>0){
-                drawChart(pieView, price);
-            }else {
-                Toast.makeText(Statics.this,"Not Budget Found For This Month & Year",Toast.LENGTH_LONG).show();
-            }
+                contentValues.put(MONTH, month);
+                contentValues.put(YEAR, yearInt);
+                float price = mydb.getBudget(BUDGET_TABLE, contentValues);
+                if (price > 0) {
+                    drawChart(pieView, price);
+                } else {
+                    Toast.makeText(Statics.this, "No Expenses for this month", Toast.LENGTH_LONG).show();
+                }
             }
 
         };
@@ -97,9 +96,8 @@ public class Statics extends AppCompatActivity {
 
         List<AddexpnseModel> expenseList = mydb.getAllExpense(dbHandler.EXPENSE_TABLE);
         for (int i = 0; i < expenseList.size(); i++) {
-            pieHelperArrayList.add(new PieHelper(100f * expenseList.get(i).getPrice() / totalBudget,expenseList.get(i).getCategory(),0));
+            pieHelperArrayList.add(new PieHelper(100f * expenseList.get(i).getPrice() / totalBudget, expenseList.get(i).getCategory(), 0));
         }
-
 
 
         pieView.selectedPie(PieView.NO_SELECTED_INDEX);
