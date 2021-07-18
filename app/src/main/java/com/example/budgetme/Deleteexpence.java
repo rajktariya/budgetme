@@ -33,7 +33,7 @@ public class Deleteexpence extends Activity {
         LinearLayoutManager linearLayoutManager = new LinearLayoutManager(this);
         recyclerView.setLayoutManager(linearLayoutManager);
         mydb = new dbHandler(this);
-       List<AddexpnseModel> expenseList = mydb.getAllExpense(dbHandler.EXPENSE_TABLE);
+        List<AddexpnseModel> expenseList = mydb.getAllExpense(dbHandler.EXPENSE_TABLE);
 
         adapterExpense = new AdapterExpenseAdapter(expenseList);
         recyclerView.setAdapter(adapterExpense);

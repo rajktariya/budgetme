@@ -57,6 +57,11 @@ public class dbHandler extends SQLiteOpenHelper {
                 + AMOUNT + " REAL, " + MONTH + " INTEGER, " + YEAR + " INTEGER , CONSTRAINT monthYear_unique UNIQUE(" + MONTH + "," + YEAR + "))";
         db.execSQL(CREATE_BUDGET_TABLE);
         db.execSQL("INSERT INTO categories (catName) VALUES ('FOOD'),('TRANSPORT'),('MEDICAL'),('EDUCATION'),('ENTERTAINMENT'),('CLOTHES')");
+
+
+        String CREATE_TASK_TABLE = "CREATE TABLE IF NOT EXISTS tasktodo ("
+                + _ID + " INTEGER PRIMARY KEY AUTOINCREMENT, taskname TEXT UNIQUE)";
+        db.execSQL(CREATE_TASK_TABLE);
     }
 
     @Override
@@ -116,6 +121,11 @@ public class dbHandler extends SQLiteOpenHelper {
         String del = "DELETE FROM expenses WHERE id=" + id;
         db.execSQL(del);
     }
+    public void deleteTaskTodo(int id) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        String del = "DELETE FROM tasktodo WHERE id=" + id;
+        db.execSQL(del);
+    }
 
     ///////////////////////////////////////Inserting new categories into categories table
 //////////////////////////
@@ -141,6 +151,39 @@ public class dbHandler extends SQLiteOpenHelper {
         if (cursor.moveToFirst()) {
             do {
                 categoriesList.add(cursor.getString(1));
+            } while (cursor.moveToNext());
+        }
+        // closing connection
+
+        cursor.close();
+        db.close();
+        // returning lables
+        return categoriesList;
+    }
+    public void insertTask(String category) {
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues values = new ContentValues();
+        values.put("taskname", category);
+
+        // Inserting Row
+        db.insert("tasktodo", null, values);
+        // Closing database connection
+        db.close();
+    }
+
+    public List<AddexpnseModel> getAllTaskList() {
+        List<AddexpnseModel> categoriesList = new ArrayList<AddexpnseModel>();
+        // Select All Query
+        String selectQuery = "SELECT * FROM tasktodo";
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursor = db.rawQuery(selectQuery, null);
+        // looping through all rows and adding to list
+        if (cursor.moveToFirst()) {
+            do {
+                AddexpnseModel addexpnseModel = new AddexpnseModel();
+                addexpnseModel.setCategory(cursor.getString(0));
+                addexpnseModel.setCategory(cursor.getString(1));
+                categoriesList.add(addexpnseModel);
             } while (cursor.moveToNext());
         }
         // closing connection
