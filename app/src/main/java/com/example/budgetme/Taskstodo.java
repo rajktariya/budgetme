@@ -1,10 +1,11 @@
 package com.example.budgetme;
 
+import android.app.Activity;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Taskstodo extends AppCompatActivity {
+public class Taskstodo extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
