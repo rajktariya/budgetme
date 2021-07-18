@@ -81,7 +81,7 @@
 
         android:textColor="@color/black"
         android:layout_below="@id/categories"
-        android:text="Statics" />
+        android:text="STATISTICS" />
     <Button
         android:id="@+id/taskstodo"
         android:layout_width="match_parent"

@@ -1,5 +1,6 @@
 package com.example.budgetme;
 
+import android.app.Activity;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
@@ -17,7 +18,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.List;
 
-public class Deleteexpence extends AppCompatActivity {
+public class Deleteexpence extends Activity {
     dbHandler mydb;
     AdapterExpenseAdapter adapterExpense;
     RecyclerView recyclerView;

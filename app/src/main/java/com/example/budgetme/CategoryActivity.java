@@ -1,5 +1,6 @@
 package com.example.budgetme;
 
+import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.AdapterView;
@@ -11,7 +12,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class CategoryActivity extends AppCompatActivity {
+public class CategoryActivity extends Activity {
     dbHandler mydb;
     int categorySelectedPosition;
     String[] categoryListStrings ;

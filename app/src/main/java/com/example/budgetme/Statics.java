@@ -1,5 +1,6 @@
 package com.example.budgetme;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.os.Bundle;
@@ -26,7 +27,7 @@ import static com.example.budgetme.dbHandler.BUDGET_TABLE;
 import static com.example.budgetme.dbHandler.MONTH;
 import static com.example.budgetme.dbHandler.YEAR;
 
-public class Statics extends AppCompatActivity {
+public class Statics extends Activity {
     dbHandler mydb;
     final Calendar myCalendar = Calendar.getInstance();
     int month, yearInt;

@@ -7,6 +7,17 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     >
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0000FF"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:paddingLeft="20dp"
+        android:text="Statistics"/>
+
     <Button
         android:id="@+id/selectmonth"
         android:layout_width="wrap_content"
@@ -15,6 +26,7 @@
         android:layout_marginTop="15dp"
         android:text="Select month and year"
         android:backgroundTint="#C1BEBE"
+        android:layout_below="@+id/title"
         android:textColor="#434141"
         android:visibility="visible" />
 

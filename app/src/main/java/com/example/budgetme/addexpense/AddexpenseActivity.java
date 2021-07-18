@@ -1,5 +1,6 @@
 package com.example.budgetme.addexpense;
 
+import android.app.Activity;
 import android.app.DatePickerDialog;
 import android.content.ContentValues;
 import android.graphics.Color;
@@ -31,7 +32,7 @@ import static com.example.budgetme.dbHandler.EXPENSE_TABLE;
 import static com.example.budgetme.dbHandler.MONTH;
 import static com.example.budgetme.dbHandler.YEAR;
 
-public class AddexpenseActivity extends AppCompatActivity {
+public class AddexpenseActivity extends Activity {
     String[] categoryListStrings ;
     dbHandler mydb;
     int categorySelectedPosition = 0;

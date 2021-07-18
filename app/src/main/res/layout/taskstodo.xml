@@ -6,11 +6,22 @@
     android:layout_height="match_parent"
     android:background="#DA0F0F"
     tools:context=".Login">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0000FF"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:paddingLeft="20dp"
+        android:text="Task ToDo"/>
 
 <TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:textSize="30dp"
+    android:layout_below="@+id/title"
     android:textColor="@color/white"
     android:text="Taskstodo"/>
 </RelativeLayout>

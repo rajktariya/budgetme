@@ -6,6 +6,16 @@
     android:layout_height="match_parent"
     android:background="#ffffff"
     tools:context=".Login">
+    <TextView
+        android:id="@+id/title"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="#0000FF"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:textStyle="italic"
+        android:paddingLeft="20dp"
+        android:text="Add Expense"/>
 
 <TextView
     android:id="@+id/price"
@@ -16,6 +26,7 @@
     android:textStyle="italic"
     android:layout_marginTop="30dp"
     android:layout_marginLeft="10dp"
+    android:layout_below="@+id/title"
     android:text="Price:"/>
 
     <EditText
