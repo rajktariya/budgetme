@@ -40,6 +40,7 @@ public class AdapterTaskTodo extends RecyclerView.Adapter<AdapterTaskTodo.ViewHo
                 @Override
                 public void onClick(View v) {
                     mydb.deleteTaskTodo(localDataSet.get(getAdapterPosition()).getId());
+                    localDataSet.remove(getAdapterPosition());
                     notifyDataSetChanged();
                 }
             });
