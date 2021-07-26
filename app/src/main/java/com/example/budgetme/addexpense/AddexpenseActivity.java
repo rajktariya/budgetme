@@ -65,15 +65,15 @@ public class AddexpenseActivity extends Activity {
             @Override
             public void onClick(View v) {
                 if (categoryListStrings[categorySelectedPosition] == null || categoryListStrings[categorySelectedPosition].isEmpty()) {
-                    Toast.makeText(AddexpenseActivity.this, "Select valid category", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Select valid category", Toast.LENGTH_LONG).show();
                 } else if (price.getText() == null || price.getText().length() == 0) {
-                    Toast.makeText(AddexpenseActivity.this, "Enter valid price", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Enter valid price", Toast.LENGTH_LONG).show();
                 } else if (pickdate.getText() == null || pickdate.getText().length() == 0) {
-                    Toast.makeText(AddexpenseActivity.this, "Select valid date", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Select valid date", Toast.LENGTH_LONG).show();
                 } else if (descriptiontv.getText() == null || descriptiontv.getText().length() == 0) {
-                    Toast.makeText(AddexpenseActivity.this, "Enter valid description", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Enter valid description", Toast.LENGTH_LONG).show();
                 }else {
-                    Toast.makeText(AddexpenseActivity.this, "Data saved successfully", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "Data saved successfully", Toast.LENGTH_LONG).show();
                     ContentValues contentValues = new ContentValues();
                     contentValues.put("category", categoryListStrings[categorySelectedPosition]);
                     contentValues.put(AMOUNT, price.getText().toString());

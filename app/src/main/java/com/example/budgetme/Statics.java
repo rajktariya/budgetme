@@ -67,7 +67,7 @@ public class Statics extends Activity {
                     drawChart(pieView, price);
                 } else {
                     errortext.setText("No Expenses for this month");
-                    Toast.makeText(Statics.this, "No Expenses for this month", Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(), "No Expenses for this month", Toast.LENGTH_LONG).show();
                 }
             }
 
@@ -105,7 +105,7 @@ public class Statics extends Activity {
             pieHelperArrayList.add(new PieHelper(100f * expenseList.get(i).getPrice() / totalBudget, expenseList.get(i).getCategory(), 0));
         }
         if(totalPrice>totalBudget){
-            Toast.makeText(Statics.this, "Your expenses "+totalPrice +" have exceeded your budget limit by "+(totalPrice-totalBudget), Toast.LENGTH_LONG).show();
+            Toast.makeText(getBaseContext(), "Your expenses "+totalPrice +" have exceeded your budget limit by "+(totalPrice-totalBudget), Toast.LENGTH_LONG).show();
             errortext.setText("Your expenses "+totalPrice +" have exceeded your budget limit by "+(totalPrice-totalBudget));
         }
 

@@ -31,10 +31,10 @@ public class CategoryActivity extends Activity {
             public void onClick(View v) {
                 if(categoryNameToAdd.getText().toString().length()>0){
                    mydb.insertCategory(categoryNameToAdd.getText().toString());
-                    Toast.makeText(CategoryActivity.this,"Category Added",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"Category Added",Toast.LENGTH_LONG).show();
                     finish();
                 }else {
-                    Toast.makeText(CategoryActivity.this,"Enter valid category name",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"Enter valid category name",Toast.LENGTH_LONG).show();
                 }
             }
         });
@@ -61,7 +61,7 @@ public class CategoryActivity extends Activity {
             @Override
             public void onClick(View v) {
                     mydb.delete(categoryListStrings[categorySelectedPosition]);
-                    Toast.makeText(CategoryActivity.this,"Category Deleted",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"Category Deleted",Toast.LENGTH_LONG).show();
                     finish();
             }
         });

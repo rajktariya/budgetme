@@ -54,13 +54,13 @@ public class Addbudget extends Activity {
                                 mydb.insertBudget(BUDGET_TABLE,contentValues);
                         selectedbudget.setVisibility(View.VISIBLE);
                         selectedbudget.setText("Selected months budget : "+editTextBudget.getText().toString());
-                        Toast.makeText(Addbudget.this,"Budget set for the selected month",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(),"Budget set for the selected month",Toast.LENGTH_LONG).show();
                         editTextBudget.setText("");
                     }else{
-                        Toast.makeText(Addbudget.this,"Enter valid month",Toast.LENGTH_LONG).show();
+                        Toast.makeText(getBaseContext(),"Enter valid month",Toast.LENGTH_LONG).show();
                     }
                 }else{
-                    Toast.makeText(Addbudget.this,"Enter valid amount",Toast.LENGTH_LONG).show();
+                    Toast.makeText(getBaseContext(),"Enter valid amount",Toast.LENGTH_LONG).show();
                 }
             }
         });
